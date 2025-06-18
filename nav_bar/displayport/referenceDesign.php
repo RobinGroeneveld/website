@@ -5,11 +5,254 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/style.css">
     <title>referenceDesign</title>
+    <style>
+
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        /* Main container with border */
+        .wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Remove default header styling */
+        header {
+            background: none;
+            color: inherit;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Section containers */
+        .refence, .running {
+            margin-bottom: 30px;
+        }
+
+        /* Typography */
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0 15px 0;
+            color: #000;
+        }
+
+        h5 {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 15px 0 10px 0;
+            color: #000;
+        }
+
+        p {
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Note blocks */
+        .block_paars2, .block_paars-3 {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .block_paars2 strong, .block_paars-3 strong {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        /* Links and lists */
+        .links ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .links li {
+            margin: 8px 0;
+        }
+
+        .links a {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
+        .links a:hover {
+            color: #004499;
+        }
+
+
+
+        /* Code blocks */
+        pre, code {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        /* Ordered lists for instructions */
+        ol {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        ol li {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        /* PHY intro section */
+        .py {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Combined sections - text and table together */
+        .amd, .intel, .lattice {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table containers - remove separate boxes, they're now inside the text boxes */
+        .table-container4, .table-container5, .table-container6 {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            box-shadow: none;
+        }
+
+        /* When table container is inside a section, add some top margin */
+        .amd .table-container4,
+        .amd .table-container5,
+        .amd .table-container6,
+        .intel .table-container4,
+        .intel .table-container5,
+        .intel .table-container6,
+        .lattice .table-container4,
+        .lattice .table-container5,
+        .lattice .table-container6 {
+            margin-top: 15px;
+        }
+
+        /* Table styling */
+        .line-rate-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 14px;
+            border: 1px solid #ddd;
+        }
+
+        .line-rate-table th {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .line-rate-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .line-rate-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .line-rate-table tbody tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* H1 styling */
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        /* Main content */
+        main {
+            margin-top: 0;
+        }
+
+        /* Fix for nested wrapper issue */
+        .wrapper .wrapper {
+            background: none;
+            border: none;
+            padding: 0;
+            box-shadow: none;
+            margin: 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .wrapper {
+                padding: 20px;
+            }
+            
+            .line-rate-table {
+                font-size: 12px;
+            }
+            
+            .line-rate-table th,
+            .line-rate-table td {
+                padding: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <?php
-        require_once "../../a_elementen.php";
+
+           require_once "../../components/header.php";
+
         ?>
         <div class="refence">
             <div class="wrapper">

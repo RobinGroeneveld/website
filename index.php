@@ -1,64 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php require_once "components/head.php"; ?>
     <title>Parretto documentation</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@700&display=swap" rel="stylesheet">
-    
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h3 {
+            font-family: "Kanit", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        p {
+            font-family: "Kanit", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+        }
+
+        .header_tekst {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .imegas {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 50px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .img_parretto img {
+            width: 250px;
+            height: auto;
+            transition: transform 0.3s;
+            border: solid white 1px;
+            border-radius: 15px;
+        }
+
+        .img_parretto img:hover {
+            transform: scale(1.05);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .wrapper {
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        .blocks {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 50px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .block_oranje {
+            background-color: #FFFBE6;
+            border-left: 5px solid #FEBE10;
+            padding: 10px 20px;
+            border-radius: 0px 10px 10px 0px;
+            width: 400px;
+        }
+
+        .block_paars {
+            background-color: #E3DDFB;
+            border-left: 5px solid #33006F;
+            padding: 10px 20px;
+            border-radius: 0px 10px 10px 0px;
+            width: 400px;
+        }
+    </style>
 </head>
 <body>
-    <?php
-        require_once "header.php";
-    ?>
-       <header>
+    <?php require_once "components/sidebar.php"; ?>
+
+    <header>
         <div class="wrapper">
             <div class="header_tekst">
                 <h3>Welcome to the Parretto documentation portal!</h3>
                 <p>Click on the jars below to view the documentation.</p>
             </div>
         </div>
-
-        <div class="imegas">
-            <a href="nav_bar/displayport/overview.php">
-                <div class="img_parretto">
-                    <img src="img/displayport_jar.png" alt="" width="250px">
-                </div>
-            </a>
-    
-            <a href="nav_bar/displayport/tentiva.php">
-                <div class="img_parretto">  
-                    <img src="img/tentiva_jar.png" alt="" width="250px">
-                </div>
-            </a>
-
-        </div>
     </header>
+
     <main>
-        <div class="blocks">
-            <div class="block_paars">
-                <strong>Note</strong>
-                <p>The project are under active development.</p>
-            </div>
-            <div class="block_oranje">
-                <p>(c) 2021 - 2024 by Parretto B.V.</p>
-                <p>www.parretto.com</p>
+        <div class="container">
+            <div class="wrapper">
+                <div class="imegas">
+                    <a href="nav_bar/displayport/overview.php">
+                        <div class="img_parretto">
+                            <img src="img/displayport_jar.png" alt="DisplayPort Jar">
+                        </div>
+                    </a>
+                    <a href="nav_bar/displayport/tentiva.php">
+                        <div class="img_parretto">
+                            <img src="img/tentiva_jar.png" alt="Tentiva Jar">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="blocks">
+                    <div class="block_paars">
+                        <strong>Note</strong>
+                        <p>The projects are under active development.</p>
+                    </div>
+                    <div class="block_oranje">
+                        <p>(c) 2021 - 2024 by Parretto B.V.</p>
+                        <p>www.parretto.com</p>
+                    </div>
+                </div>
             </div>
         </div>
-
     </main>
-    
-       
 
     <footer>
-
+       
     </footer>
-    
 </body>
 </html>

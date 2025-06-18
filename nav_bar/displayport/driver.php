@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/style.css">
     <title>Driver</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 <body>
     <header>
         <?php
-
-        require_once "../../a_elementen.php";
-        
+            require_once "../../components/header.php";
         ?>
             <div class="wrapper">
                 <h3>Driver</h3>
