@@ -11,7 +11,7 @@
         }
 
         body {
-            font-family: sans-serif;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f5f5f5;
@@ -205,6 +205,83 @@
                 font-size: 0.9rem;
             }
         }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 95%;
+      max-height: 95%;
+      object-fit: contain;
+      border-radius: 8px;
+      animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+      from { 
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      to { 
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      z-index: 1001;
+    }
+
+    .close:hover {
+      color: #ccc;
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      font-size: 24px;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+      z-index: 1001;
+    }
+
+    .nav-button:hover {
+      background: rgba(255, 255, 255, 1);
+    }
+
+    .prev {
+      left: 20px;
+    }
+
+    .next {
+      right: 20px;
+    }
     </style>
 </head>
 <body>
@@ -519,19 +596,19 @@
 
             <div class="video-diagrams">
             
-                <img src="../../img/dprx_vid_wave.png" alt="img" with="120px" height="160px">
-                <p class="figure-caption">Figure 2: Video - waveform</p>
+                <img src="../../img/dprx_vid_wave.png" alt="img" with="120px" height="160px" class="photo">
+                <p class="figure-caption">Figure 2: Video - waveform (click on the image to enlarge it)</p>
              
             </div>
 
                 <div class="video-diagram">
-                    <img src="../../img/dprx_vid_map_2ppc.png" alt="img" with="300px" height="650px">
-                    <p class="figure-caption">Figure 3: Video - 2 pixels per clock / 10 bits per component</p>
+                    <img src="../../img/dprx_vid_map_2ppc.png" alt="img" with="300px" height="650px" class="photo">
+                    <p class="figure-caption">Figure 3: Video - 2 pixels per clock / 10 bits per component (click on the image to enlarge it)</p>
                 </div>
 
                 <div class="video-diagram">
-                    <img src="../../img/dprx_vid_map_4ppc.png" alt="img" with="300px" height="250px">
-                    <p class="figure-caption">Figure 4: Video - 4 pixels per clock / 8 bits per component</p>
+                    <img src="../../img/dprx_vid_map_4ppc.png" alt="img" with="300px" height="250px" class="photo">
+                    <p class="figure-caption">Figure 4: Video - 4 pixels per clock / 8 bits per component (click on the image to enlarge it)</p>
                 </div>
             </div>
 
@@ -547,16 +624,83 @@
 
           
             <div class="video-diagram">
-                <img src="../../img/diagram_7.png" alt="img" with="120px" height="160px">
-                <p class="figure-caption">Figure 5: Video - 4 pixels per clock / 10 bits per component</p>
+                <img src="../../img/diagram_7.png" alt="img" with="120px" height="160px" class="photo">
+                <p class="figure-caption">Figure 5: Video - 4 pixels per clock / 10 bits per component (click on the image to enlarge it)</p>
             </div>
                 <p>Figure 5 shows the timing and mapping of a SDP audio packet.</p>
 
-                <div class="video-diagram">
-                <img src="../../img/diagram_8.png" alt="img" with="120px" height="160px">
-                <p class="figure-caption">Figure 5: Video - 4 pixels per clock / 10 bits per component</p>
+            <div class="video-diagram">
+                <img src="../../img/diagram_8.png" alt="img" with="120px" height="160px" class="photo">
+                <p class="figure-caption">Figure 5: Video - 4 pixels per clock / 10 bits per component (click on the image to enlarge it)</p>
             </div>
         </div>
     </div>
+
+    <div class="modal" id="photoModal">
+        <span class="close">&times;</span>
+        <button class="nav-button prev">‹</button>
+        <img class="modal-content" id="modalImage" alt="Grote foto">
+        <button class="nav-button next">›</button>
+    </div>
+    <script>
+    let currentImageIndex = 0;
+    const photos = document.querySelectorAll('.photo');
+    const modal = document.getElementById('photoModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.close');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+
+
+    photos.forEach((photo, index) => {
+        photo.addEventListener('click', () => {
+            currentImageIndex = index;
+            openModal(photo.src);
+        });
+    });
+
+    function openModal(src) {
+        modal.classList.add('active');
+        modalImage.src = src;
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto'; 
+    }
+
+    // Sluit modal
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+ 
+    nextBtn.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex + 1) % photos.length;
+        modalImage.src = photos[currentImageIndex].src;
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex - 1 + photos.length) % photos.length;
+        modalImage.src = photos[currentImageIndex].src;
+    });
+
+
+    document.addEventListener('keydown', (e) => {
+        if (modal.classList.contains('active')) {
+            if (e.key === 'Escape') {
+                closeModal();
+            } else if (e.key === 'ArrowRight') {
+                nextBtn.click();
+            } else if (e.key === 'ArrowLeft') {
+                prevBtn.click();
+            }
+        }
+    });
+    </script>
 </body>
 </html>

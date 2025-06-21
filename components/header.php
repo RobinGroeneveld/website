@@ -1,11 +1,10 @@
 <header>
     <div class="side_bar">     
-    <div class="img">
-    <script src="https://kit.fontawesome.com/81af0c0b33.js" crossorigin="anonymous"></script>   
-        <a href="../../index.php">
-            <img src="../../img/parretto_logo.webp" alt="" width="120px">
-        </a>
-    </div>   
+        <div class="img">  
+            <a href="../../index.php">
+                <img src="../../img/parretto_logo.webp" alt="" width="120px">
+            </a>
+        </div>   
         <div class="drop-down">
             <button class="dropdown-btn">
                 <div class="tekst">

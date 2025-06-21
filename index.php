@@ -5,7 +5,7 @@
     <title>Parretto documentation</title>
     <style>
         body {
-            font-family: sans-serif;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -73,14 +73,19 @@
         }
 
         .block_oranje {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; 
             background-color: #FFFBE6;
             border-left: 5px solid #FEBE10;
             padding: 10px 20px;
             border-radius: 0px 10px 10px 0px;
-            width: 400px;
+            width: 180px;
+            margin-top: auto;
         }
 
         .block_paars {
+            justify-content: center;
             background-color: #E3DDFB;
             border-left: 5px solid #33006F;
             padding: 10px 20px;
@@ -121,10 +126,6 @@
                     <div class="block_paars">
                         <strong>Note</strong>
                         <p>The projects are under active development.</p>
-                    </div>
-                    <div class="block_oranje">
-                        <p>(c) 2021 - 2024 by Parretto B.V.</p>
-                        <p>www.parretto.com</p>
                     </div>
                 </div>
             </div>

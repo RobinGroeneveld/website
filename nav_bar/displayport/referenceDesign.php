@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="../../css/style.css">
     <title>referenceDesign</title>
     <style>
-
-        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
@@ -15,14 +13,13 @@
         }
 
         body {
-            font-family: sans-serif;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f0f0f0;
             padding: 20px;
         }
 
-        /* Main container with border */
         .wrapper {
             max-width: 1000px;
             margin: 0 auto;
@@ -32,7 +29,6 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        /* Remove default header styling */
         header {
             background: none;
             color: inherit;
@@ -40,12 +36,10 @@
             margin: 0;
         }
 
-        /* Section containers */
         .refence, .running {
             margin-bottom: 30px;
         }
 
-        /* Typography */
         h3 {
             font-size: 24px;
             font-weight: bold;
@@ -73,7 +67,6 @@
             color: #333;
         }
 
-        /* Note blocks */
         .block_paars2, .block_paars-3 {
             background: #f9f9f9;
             border: 1px solid #ddd;
@@ -88,7 +81,6 @@
             color: #000;
         }
 
-        /* Links and lists */
         .links ul {
             list-style: disc;
             padding-left: 20px;
@@ -110,7 +102,6 @@
 
 
 
-        /* Code blocks */
         pre, code {
             background: #f5f5f5;
             border: 1px solid #ddd;
@@ -121,7 +112,6 @@
             overflow-x: auto;
         }
 
-        /* Ordered lists for instructions */
         ol {
             padding-left: 20px;
             margin: 15px 0;
@@ -132,7 +122,6 @@
             font-size: 14px;
         }
 
-        /* PHY intro section */
         .py {
             background: white;
             border: 1px solid #ccc;
@@ -141,7 +130,6 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        /* Combined sections - text and table together */
         .amd, .intel, .lattice {
             background: white;
             border: 1px solid #ccc;
@@ -150,7 +138,7 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        /* Table containers - remove separate boxes, they're now inside the text boxes */
+
         .table-container4, .table-container5, .table-container6 {
             background: none;
             border: none;
@@ -159,7 +147,6 @@
             box-shadow: none;
         }
 
-        /* When table container is inside a section, add some top margin */
         .amd .table-container4,
         .amd .table-container5,
         .amd .table-container6,
@@ -172,7 +159,6 @@
             margin-top: 15px;
         }
 
-        /* Table styling */
         .line-rate-table {
             width: 100%;
             border-collapse: collapse;
@@ -204,7 +190,6 @@
             background-color: #f0f0f0;
         }
 
-        /* H1 styling */
         h1 {
             font-size: 28px;
             font-weight: bold;
@@ -212,12 +197,9 @@
             color: #000;
         }
 
-        /* Main content */
         main {
             margin-top: 0;
         }
-
-        /* Fix for nested wrapper issue */
         .wrapper .wrapper {
             background: none;
             border: none;
@@ -226,7 +208,6 @@
             margin: 0;
         }
 
-        /* Responsive design */
         @media (max-width: 768px) {
             body {
                 padding: 10px;
@@ -332,7 +313,6 @@
                         <p>Press x to enable the pass-through mode. You should see the video from the DisplayPort source device displayed on the DisplayPort sink device.</p>
                         <img src="../../img/uart-pass.png" alt="img">
                         <p>Figure 9: Pass-Through</p>
-                    
                 </div>
             </div>
         </div>  

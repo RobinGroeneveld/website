@@ -6,7 +6,7 @@
 
     <style>
         body{
-            font-family: sans-serif;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         }
         .repository-section{
             display: flex;
@@ -35,13 +35,20 @@
             font-family: Arial, sans-serif;
         }
         
-        .repository-description a {
-            color: #0066cc;
+         .repository-section a{
+            margin-top: 16px;
+            margin-left: 10px;
             text-decoration: none;
         }
-        
-        .repository-description a:hover {
-            text-decoration: underline;
+        .repository-section-reference-design{
+            display:flex;
+            flex-direction: row;
+
+        }
+        .repository-section-reference-design a{
+            text-decoration: none;
+            margin-top: 16px;
+            margin-left: 10px;
         }
         
         .file-tree {
@@ -170,12 +177,11 @@
     
     <div class="repository-container">
         <h2 class="section-title">Reference design</h2>
-        <p class="repository-description">
-            Follow the steps below to build the reference design for both gateware and software components.
-        </p>
+        <p> Follow the steps below to build the reference design for both gateware and software components.</p>
+         <p>Before building the reference design application, you need to install the RISC-V GNU Compiler Toolchain.</p>
         
-        <div class="repository-section">
-            <p class="repository-description">Before building the reference design application, you need to install the RISC-V GNU Compiler Toolchain. You can download the toolchain from the GitHub repository</p> 
+        <div class="repository-section-reference-design">
+            <p>You can download the toolchain from the GitHub repository</p> 
             <a href="https://github.com/riscv-collab/riscv-gnu-toolchain"
             onclick="return popitup('https://github.com/riscv-collab/riscv-gnu-toolchain')">Here</a>
         </div>

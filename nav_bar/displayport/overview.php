@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: sans-serif;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f6f8;  
             color: #222;
             font-size: 15px;
@@ -35,22 +35,27 @@
             margin: 24px 0 12px;
         }
 
-        h2 { font-size: 24px; }
-        h3 { font-size: 20px; }
-        h4 { font-size: 17px; }
+        h2 { 
+            font-size: 24px; 
+        }
+        h3 { 
+            font-size: 20px; 
+        }
+        h4 { 
+            font-size: 17px; 
+        }
 
         p {
             margin-bottom: 12px;
         }
 
-   
         .table-container {
             overflow-x: auto;
             margin: 20px 0 40px 0;
         }
 
         table.line-rate-table {
-            width: 170%;
+            width: 100%;
             border-collapse: collapse;
             background-color: #fff;
             font-size: 14px;
@@ -94,6 +99,8 @@
         margin: 40px 0;
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        width: 100%;
+       
     }
 
     .section-box h2,

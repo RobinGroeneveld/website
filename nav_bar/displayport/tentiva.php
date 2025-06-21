@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="../../css/style.css">
     <title>Tentiva</title>
     <style>
-        /* Algemene reset */
             * {
                 box-sizing: border-box;
                 margin: 0;
